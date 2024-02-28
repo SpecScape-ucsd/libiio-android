@@ -1,0 +1,371 @@
+The target system is: Android - 1 - aarch64
+The host system is: Linux - 5.4.0-148-generic - x86_64
+Determining if the C compiler works passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_3ab76/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3ab76.dir/build.make CMakeFiles/cmTC_3ab76.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3ab76.dir/testCCompiler.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -fPIE   -o CMakeFiles/cmTC_3ab76.dir/testCCompiler.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_3ab76
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3ab76.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security    -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_3ab76.dir/testCCompiler.c.o  -o cmTC_3ab76 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cb9a7/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cb9a7.dir/build.make CMakeFiles/cmTC_cb9a7.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -fPIE   -o CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_cb9a7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb9a7.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security    -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections  -v CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o  -o cmTC_cb9a7 
+Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)
+Target: aarch64-none-linux-android29
+Thread model: posix
+InstalledDir: /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin
+Found candidate GCC installation: /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+Selected GCC installation: /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x
+Candidate multilib: .;@m64
+Selected multilib: .;@m64
+ "/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -EL --fix-cortex-a53-843419 -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_cb9a7 /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29/crtbegin_dynamic.o -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64 -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29 -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29/crtend_android.o
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+
+Parsed C implicit link information from above output:
+  link line regex: [^( *|.*[/\])(aarch64-linux-android-ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
+  ignore line: [Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp]
+  ignore line: []
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_cb9a7/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_cb9a7.dir/build.make CMakeFiles/cmTC_cb9a7.dir/build]
+  ignore line: [make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -fPIE   -o CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_cb9a7]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cb9a7.dir/link.txt --verbose=1]
+  ignore line: [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security    -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections  -v CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o  -o cmTC_cb9a7 ]
+  ignore line: [Android (5220042 based on r346389c) clang version 8.0.7 (https://android.googlesource.com/toolchain/clang b55f2d4ebfd35bf643d27dbca1bb228957008617) (https://android.googlesource.com/toolchain/llvm 3c393fe7a7e13b0fba4ac75a01aa683d7a5b11cd) (based on LLVM 8.0.7svn)]
+  ignore line: [Target: aarch64-none-linux-android29]
+  ignore line: [Thread model: posix]
+  ignore line: [InstalledDir: /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin]
+  ignore line: [Found candidate GCC installation: /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  ignore line: [Selected GCC installation: /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  ignore line: [Candidate multilib: .]
+  ignore line: [@m64]
+  ignore line: [Selected multilib: .]
+  ignore line: [@m64]
+  link line: [ "/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld" --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -EL --fix-cortex-a53-843419 -z now -z relro --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_cb9a7 /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29/crtbegin_dynamic.o -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64 -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64 -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29 -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib -L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --exclude-libs libgcc.a --exclude-libs libatomic.a --build-id --warn-shared-textrel --fatal-warnings --no-undefined -z noexecstack --gc-sections CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o -lgcc -ldl -lc -lgcc -ldl /home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29/crtend_android.o]
+    arg [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/bin/ld] ==> ignore
+    arg [--sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
+    arg [-pie] ==> ignore
+    arg [-EL] ==> ignore
+    arg [--fix-cortex-a53-843419] ==> ignore
+    arg [-znow] ==> ignore
+    arg [-zrelro] ==> ignore
+    arg [--hash-style=gnu] ==> ignore
+    arg [--enable-new-dtags] ==> ignore
+    arg [--eh-frame-hdr] ==> ignore
+    arg [-m] ==> ignore
+    arg [aarch64linux] ==> ignore
+    arg [-dynamic-linker] ==> ignore
+    arg [/system/bin/linker64] ==> ignore
+    arg [-o] ==> ignore
+    arg [cmTC_cb9a7] ==> ignore
+    arg [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29/crtbegin_dynamic.o] ==> ignore
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64]
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64]
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29]
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib]
+    arg [-L/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+    arg [--exclude-libs] ==> ignore
+    arg [libgcc.a] ==> ignore
+    arg [--exclude-libs] ==> ignore
+    arg [libatomic.a] ==> ignore
+    arg [--build-id] ==> ignore
+    arg [--warn-shared-textrel] ==> ignore
+    arg [--fatal-warnings] ==> ignore
+    arg [--no-undefined] ==> ignore
+    arg [-znoexecstack] ==> ignore
+    arg [--gc-sections] ==> ignore
+    arg [CMakeFiles/cmTC_cb9a7.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [-lgcc] ==> lib [gcc]
+    arg [-ldl] ==> lib [dl]
+    arg [-lc] ==> lib [c]
+    arg [-lgcc] ==> lib [gcc]
+    arg [-ldl] ==> lib [dl]
+    arg [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29/crtend_android.o] ==> ignore
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64]
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x]
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib/../lib64] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64]
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29]
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x/../../../../aarch64-linux-android/lib] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib]
+  collapse library dir [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+  implicit libs: [gcc;dl;c;gcc;dl]
+  implicit dirs: [/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/8.0.7/lib/linux/aarch64;/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/lib/gcc/aarch64-linux-android/4.9.x;/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib64;/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/29;/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/aarch64-linux-android/lib;/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+  implicit fwks: []
+
+
+
+
+Detecting C [-std=c11] compiler features compiled with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_61d48/fast"
+/usr/bin/make -f CMakeFiles/cmTC_61d48.dir/build.make CMakeFiles/cmTC_61d48.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_61d48.dir/feature_tests.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -fPIE   -std=c11 -o CMakeFiles/cmTC_61d48.dir/feature_tests.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/feature_tests.c
+Linking C executable cmTC_61d48
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_61d48.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security    -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_61d48.dir/feature_tests.c.o  -o cmTC_61d48 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:1c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c99] compiler features compiled with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_93185/fast"
+/usr/bin/make -f CMakeFiles/cmTC_93185.dir/build.make CMakeFiles/cmTC_93185.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_93185.dir/feature_tests.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -fPIE   -std=c99 -o CMakeFiles/cmTC_93185.dir/feature_tests.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/feature_tests.c
+Linking C executable cmTC_93185
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93185.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security    -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_93185.dir/feature_tests.c.o  -o cmTC_93185 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:1c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:1c_variadic_macros
+
+
+Detecting C [-std=c90] compiler features compiled with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d647d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d647d.dir/build.make CMakeFiles/cmTC_d647d.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d647d.dir/feature_tests.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security   -fPIE   -std=c90 -o CMakeFiles/cmTC_d647d.dir/feature_tests.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/feature_tests.c
+Linking C executable cmTC_d647d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d647d.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security    -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_d647d.dir/feature_tests.c.o  -o cmTC_d647d -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+
+    Feature record: C_FEATURE:1c_function_prototypes
+    Feature record: C_FEATURE:0c_restrict
+    Feature record: C_FEATURE:0c_static_assert
+    Feature record: C_FEATURE:0c_variadic_macros
+Determining if the strdup exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_bf462/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bf462.dir/build.make CMakeFiles/cmTC_bf462.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_bf462.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_bf462.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_bf462
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bf462.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_bf462.dir/CheckSymbolExists.c.o  -o cmTC_bf462 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strdup
+  return ((int*)(&strdup))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strndup exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5bf0d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5bf0d.dir/build.make CMakeFiles/cmTC_5bf0d.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5bf0d.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_5bf0d.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5bf0d
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bf0d.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_5bf0d.dir/CheckSymbolExists.c.o  -o cmTC_5bf0d -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strndup
+  return ((int*)(&strndup))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strerror_r exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a52c5/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a52c5.dir/build.make CMakeFiles/cmTC_a52c5.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a52c5.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_a52c5.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_a52c5
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a52c5.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_a52c5.dir/CheckSymbolExists.c.o  -o cmTC_a52c5 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strerror_r
+  return ((int*)(&strerror_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the strtok_r exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e00f0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e00f0.dir/build.make CMakeFiles/cmTC_e00f0.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e00f0.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_e00f0.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_e00f0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e00f0.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_e00f0.dir/CheckSymbolExists.c.o  -o cmTC_e00f0 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <string.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtok_r
+  return ((int*)(&strtok_r))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the newlocale exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_c7106/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c7106.dir/build.make CMakeFiles/cmTC_c7106.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c7106.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_c7106.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_c7106
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7106.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_c7106.dir/CheckSymbolExists.c.o  -o cmTC_c7106 -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <locale.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef newlocale
+  return ((int*)(&newlocale))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the in6addr_any exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_072ae/fast"
+/usr/bin/make -f CMakeFiles/cmTC_072ae.dir/build.make CMakeFiles/cmTC_072ae.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_072ae.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_072ae.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_072ae
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_072ae.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_072ae.dir/CheckSymbolExists.c.o  -o cmTC_072ae -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <netinet/in.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef in6addr_any
+  return ((int*)(&in6addr_any))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the libusb_get_version exist passed with the following output:
+Change Dir: /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_fbd7c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_fbd7c.dir/build.make CMakeFiles/cmTC_fbd7c.dir/build
+make[1]: Entering directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_fbd7c.dir/CheckSymbolExists.c.o
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -I/home/jason/Desktop/Work5-SDR/aarch-lib/dynamicinclude/libusb-1.0  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter  -fPIE   -o CMakeFiles/cmTC_fbd7c.dir/CheckSymbolExists.c.o   -c /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_fbd7c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbd7c.dir/link.txt --verbose=1
+/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=aarch64-none-linux-android29 --gcc-toolchain=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -Wa,--noexecstack -Wformat -Werror=format-security  -Wall -Wextra -pedantic -Wno-unused-parameter   -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--warn-shared-textrel -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments -Wl,-z,noexecstack -Wl,--gc-sections   CMakeFiles/cmTC_fbd7c.dir/CheckSymbolExists.c.o  -o cmTC_fbd7c /home/jason/Desktop/Work5-SDR/aarch-lib/newlib/libusb-1.0.so -latomic -lm 
+make[1]: Leaving directory '/home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp'
+
+File /home/jason/Desktop/Work5-SDR/libiio-android/android-libiio/build-android/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <libusb.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef libusb_get_version
+  return ((int*)(&libusb_get_version))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
