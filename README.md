@@ -1,1 +1,1 @@
-# libiio-android
+# This is libiio for Android

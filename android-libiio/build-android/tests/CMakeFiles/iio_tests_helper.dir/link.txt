@@ -1,2 +1,0 @@
-/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ar qc libiio_tests_helper.a  CMakeFiles/iio_tests_helper.dir/iio_common.c.o CMakeFiles/iio_tests_helper.dir/gen_code.c.o
-/home/jason/Desktop/android-ndk-r20b/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ranlib libiio_tests_helper.a
