@@ -53,7 +53,8 @@ namespace gr {
       uri(uri),
       type(type),
       output(output),
-      required_enable(required_enable)
+      required_enable(required_enable),
+      fd(fd)
     {
 
       ctx = device_source_impl::get_context_android(uri, fd);
