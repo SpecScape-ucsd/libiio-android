@@ -39,7 +39,7 @@ namespace gr {
 	public:
 		explicit pluto_source_impl(fmcomms2_source::sptr block);
 
-		static std::string get_uri();
+		static std::string get_uri(int fd);
 
 		void set_params(unsigned long long frequency,
 				unsigned long samplerate,

@@ -61,7 +61,7 @@ namespace gr {
 		    const char *gain2, double gain2_value,
 		    const char *gain3, double gain3_value,
 		    const char *gain4, double gain4_value,
-		    const char *rf_port_select, const char *filter = "", int fd);
+		    const char *rf_port_select, const char *filter = "", int fd = 0);
 
       static sptr make_from(struct iio_context *ctx,
 		    unsigned long long frequency1,
