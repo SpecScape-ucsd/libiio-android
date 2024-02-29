@@ -47,7 +47,7 @@ namespace gr {
 		    const char *rf_port_select,
 		    double attenuation1, double attenuation2,
 		    double attenuation3, double attenuation4,
-		    const char *filter = "", int fd);
+		    const char *filter = "", int fd = 0);
 
       static sptr make_from(struct iio_context *ctx,
 		    unsigned long long frequency1,
