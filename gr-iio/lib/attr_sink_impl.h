@@ -45,10 +45,11 @@ namespace gr {
       struct iio_context *ctx;
       struct iio_device *dev;
       struct iio_channel * chan;
+      int fd;
 
      public:
       attr_sink_impl(const std::string &uri, const std::string &device,
-        const std::string &channel, int type, bool output, bool required_enable);
+        const std::string &channel, int type, bool output, bool required_enable, int fd);
       ~attr_sink_impl();
 
       void write_attribute(pmt::pmt_t pdu);

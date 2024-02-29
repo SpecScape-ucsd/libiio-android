@@ -44,7 +44,7 @@ namespace gr {
      * The private constructor
      */
     attr_sink_impl::attr_sink_impl(const std::string &uri, const std::string &device,
-                                   const std::string &channel, int type, bool output, bool required_enable)
+                                   const std::string &channel, int type, bool output, bool required_enable, int fd)
       : gr::block("attr_sink",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(0, 0, 0)),
@@ -53,8 +53,7 @@ namespace gr {
       uri(uri),
       type(type),
       output(output),
-      required_enable(required_enable),
-      int fd
+      required_enable(required_enable)
     {
 
       ctx = device_source_impl::get_context_android(uri, fd);

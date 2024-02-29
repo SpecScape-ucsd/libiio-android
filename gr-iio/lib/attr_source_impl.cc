@@ -76,7 +76,7 @@ namespace gr {
      */
     attr_source_impl::attr_source_impl(const std::string &uri, const std::string &device, const std::string &channel,
       const std::string &attribute, int update_interval_ms, int samples_per_update, int data_type, int attr_type,
-      bool output, uint32_t address, bool required_enable)
+      bool output, uint32_t address, bool required_enable, int fd)
       : gr::sync_block("attr_source",
               gr::io_signature::make(0, 0, 0),
               gr::io_signature::make(1, -1, type_sizeof(data_type, attr_type) )),
@@ -91,8 +91,7 @@ namespace gr {
       output(output),
       m_attr_type(attr_type),
       address(address),
-      required_enable(required_enable),
-      int fd
+      required_enable(required_enable)
     {
       ctx = device_source_impl::get_context_android(uri, fd);
       if (!ctx)
