@@ -91,7 +91,8 @@ namespace gr {
       output(output),
       m_attr_type(attr_type),
       address(address),
-      required_enable(required_enable)
+      required_enable(required_enable),
+      fd(fd)
     {
       ctx = device_source_impl::get_context_android(uri, fd);
       if (!ctx)
