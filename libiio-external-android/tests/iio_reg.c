@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include <libusb-1.0/libusb.h>
 
 #include "iio_common.h"
 

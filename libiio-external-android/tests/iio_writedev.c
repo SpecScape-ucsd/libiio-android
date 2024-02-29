@@ -23,6 +23,7 @@
 #else
 #include <unistd.h>
 #endif
+#include <libusb-1.0/libusb.h>
 
 #include "iio_common.h"
 
