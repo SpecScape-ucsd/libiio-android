@@ -482,19 +482,19 @@ if (WIN32)
 endif()
 
 add_library(iio ${LIBIIO_CFILES} ${LIBIIO_HEADERS} ${LIBIIO_EXTRA_HEADERS} ${LIBIIO_RC})
-set_target_properties(iio PROPERTIES
-	VERSION ${VERSION}
-	SOVERSION ${LIBIIO_VERSION_MAJOR}
-	FRAMEWORK ${OSX_FRAMEWORK}
-	PUBLIC_HEADER ${LIBIIO_HEADERS}
-	C_STANDARD 99
-	C_STANDARD_REQUIRED ON
-	C_EXTENSIONS OFF
-)
+#set_target_properties(iio PROPERTIES
+#	VERSION ${VERSION}
+#	SOVERSION ${LIBIIO_VERSION_MAJOR}
+#	FRAMEWORK ${OSX_FRAMEWORK}
+#	PUBLIC_HEADER ${LIBIIO_HEADERS}
+#	C_STANDARD 99
+#	C_STANDARD_REQUIRED ON
+#	C_EXTENSIONS OFF
+#)
 target_link_libraries(iio LINK_PRIVATE ${LIBS_TO_LINK})
 
 if (MSVC)
-	set_target_properties(iio PROPERTIES OUTPUT_NAME libiio)
+#	set_target_properties(iio PROPERTIES OUTPUT_NAME libiio)
 	target_link_options(iio PUBLIC /DEBUG)
 	# The linker puts debugging information into a program database (PDB) file
 endif()
