@@ -60,8 +60,22 @@ err_destroy_context:
 	return EXIT_FAILURE;
 }
 
+void getusb_fd(int *fd, int argc, char **argv)
+{
+	libusb_context *context;
+	libusb_device_handle *handle;
+	libusb_device *device;
+	assert((argc > 1) && (sscanf(argv[argc-1], "%d", fd) == 1));
+	libusb_set_option(NULL, LIBUSB_OPTION_NO_DEVICE_DISCOVERY);
+	assert(!libusb_init(&context));
+	assert(!libusb_wrap_sys_device(context, (intptr_t) *fd, &handle));
+}
+
 int main(int argc, char **argv)
 {
+	int fd;
+	getusb_fd(&fd, argc, argv);
+
 	char **argw;
 	unsigned long addr;
 	struct iio_context *ctx;
@@ -73,7 +87,7 @@ int main(int argc, char **argv)
 
 	argw = dup_argv(MY_NAME, argc, argv);
 
-	ctx = handle_common_opts(MY_NAME, argc, argw, "", options, options_descriptions);
+	ctx = handle_common_opts_android(MY_NAME, argc, argw, "", options, options_descriptions, &fd);
 	opts = add_common_options(options);
 	if (!opts) {
 		fprintf(stderr, "Failed to add common options\n");

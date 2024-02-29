@@ -255,6 +255,11 @@ _get_context_info_list.argtypes = (_ScanContextPtr, _POINTER(_POINTER(_ContextIn
 _get_context_info_list.restype = c_ssize_t
 _get_context_info_list.errcheck = _check_negative
 
+_get_context_info_list_android = _lib.iio_scan_context_get_info_list_android
+_get_context_info_list_android.argtypes = (_ScanContextPtr, _POINTER(_POINTER(_ContextInfoPtr)), _POINTER(c_int))
+_get_context_info_list.restype = c_ssize_t
+_get_context_info_list.errcheck = _check_negative
+
 _context_info_list_free = _lib.iio_context_info_list_free
 _context_info_list_free.argtypes = (_POINTER(_ContextInfoPtr),)
 
@@ -1472,13 +1477,14 @@ class NetworkContext(Context):
         super(NetworkContext, self).__init__(ctx)
 
 
-def scan_contexts():
+def scan_contexts(fd):
     """Scan Context."""
     scan_ctx = dict()
     ptr = _POINTER(_ContextInfoPtr)()
+    fd = 
 
-    ctx = _create_scan_context(None, 0)
-    ctx_nb = _get_context_info_list(ctx, _byref(ptr))
+    ctx = _create_scan_context(usb, 0)
+    ctx_nb = _get_context_info_list_android(ctx, _byref(ptr), _byref(fd))
 
     for i in range(0, ctx_nb):
         scan_ctx[

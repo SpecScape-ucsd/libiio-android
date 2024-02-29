@@ -188,10 +188,24 @@ static ssize_t read_sample(const struct iio_channel *chn,
 	return (ssize_t) nb;
 }
 
+void getusb_fd(int *fd, int argc, char **argv)
+{
+	libusb_context *context;
+	libusb_device_handle *handle;
+	libusb_device *device;
+	assert((argc > 1) && (sscanf(argv[argc-1], "%d", fd) == 1));
+	libusb_set_option(NULL, LIBUSB_OPTION_NO_DEVICE_DISCOVERY);
+	assert(!libusb_init(&context));
+	assert(!libusb_wrap_sys_device(context, (intptr_t) *fd, &handle));
+}
+
 #define MY_OPTS "t:b:s:T:acB"
 
 int main(int argc, char **argv)
 {
+	int fd;
+	getusb_fd(&fd, argc, argv);
+
 	char **argw;
 	unsigned int i, j, nb_channels;
 	unsigned int nb_active_channels = 0;
@@ -209,7 +223,7 @@ int main(int argc, char **argv)
 
 	setup_sig_handler();
 
-	ctx = handle_common_opts(MY_NAME, argc, argw, MY_OPTS, options, options_descriptions);
+	ctx = handle_common_opts_android(MY_NAME, argc, argw, MY_OPTS, options, options_descriptions, &fd);
 	opts = add_common_options(options);
 	if (!opts) {
 		fprintf(stderr, "Failed to add common options\n");
