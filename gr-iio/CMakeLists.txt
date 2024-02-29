@@ -87,7 +87,7 @@ ENDIF()
 # Find packages
 ########################################################################
 set(GR_COMPONENTS blocks analog volk pmt filter fft)
-find_package(Gnuradio "3.8" COMPONENTS ${GR_COMPONENTS})
+find_package(Gnuradio "3.9" COMPONENTS ${GR_COMPONENTS})
 if(NOT Gnuradio_FOUND)
     find_package(Gnuradio "3.9" COMPONENTS ${GR_COMPONENTS})
     if(NOT Gnuradio_FOUND)

@@ -58,7 +58,7 @@ namespace gr {
 		      const std::string &device_phy,
 		      const std::vector<std::string> &params,
 		      unsigned int buffer_size = DEFAULT_BUFFER_SIZE,
-		      unsigned int decimation = 0);
+		      unsigned int decimation = 0, int fd);
 
       static sptr make_from(struct iio_context *ctx, const std::string &device,
 		      const std::vector<std::string> &channels,
