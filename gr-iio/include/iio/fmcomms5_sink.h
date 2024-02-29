@@ -82,7 +82,7 @@ namespace gr {
 		    unsigned long buffer_size, bool cyclic,
 		    const char *rf_port_select, double attenuation1,
 		    double attenuation2, double attenuation3,
-        double attenuation4, const char *filter = "", int fd)
+        double attenuation4, const char *filter = "", int fd = 0)
       {
 	      fmcomms5_sink::sptr block = fmcomms5_sink::make(uri, frequency1,
 			      frequency2, samplerate, bandwidth, rx1_en,

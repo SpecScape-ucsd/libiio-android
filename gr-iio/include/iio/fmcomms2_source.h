@@ -58,7 +58,7 @@ namespace gr {
 		    bool bbdc, const char *gain1, double gain1_value,
 		    const char *gain2, double gain2_value,
 		    const char *rf_port_select, const char *filter = "",
-		    bool auto_filter = true, int fd);
+		    bool auto_filter = true, int fd = 0);
 
       static sptr make_from(struct iio_context *ctx,
 		    unsigned long long frequency, unsigned long samplerate,
@@ -92,7 +92,7 @@ namespace gr {
 		    bool bbdc, const char *gain1, double gain1_value,
 		    const char *gain2, double gain2_value,
 		    const char *rf_port_select, const char *filter = "",
-		    bool auto_filter = true, fd)
+		    bool auto_filter = true, int fd = 0)
       {
 	      fmcomms2_source::sptr block = fmcomms2_source::make(uri,
 			      frequency, samplerate,

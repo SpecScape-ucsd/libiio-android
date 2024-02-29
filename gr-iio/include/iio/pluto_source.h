@@ -48,7 +48,7 @@ namespace gr {
 				const char *gain,
 				double gain_value,
 				const char *filter = "",
-				bool auto_filter = true, int fd);
+				bool auto_filter = true, int fd = 0);
 
 		virtual void set_params(unsigned long long frequency,
 				unsigned long samplerate,

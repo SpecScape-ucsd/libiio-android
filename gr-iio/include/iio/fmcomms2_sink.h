@@ -44,7 +44,7 @@ namespace gr {
 		    unsigned long buffer_size, bool cyclic,
 		    const char *rf_port_select, double attenuation1,
 		    double attenuation2, const char *filter = "",
-		    bool auto_filter = true, int fd);
+		    bool auto_filter = true, int fd = 0);
 
       static sptr make_from(struct iio_context *ctx,
 		    unsigned long long frequency, unsigned long samplerate,
@@ -73,7 +73,7 @@ namespace gr {
 		    unsigned long buffer_size, bool cyclic,
 		    const char *rf_port_select, double attenuation1,
 		    double attenuation2, const char *filter = "",
-		    bool auto_filter = true, int fd)
+		    bool auto_filter = true, int fd = 0)
       {
 	      fmcomms2_sink::sptr block = fmcomms2_sink::make(uri, frequency,
 			      samplerate, bandwidth, rx1_en,
