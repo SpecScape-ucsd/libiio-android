@@ -24,11 +24,12 @@ import iio
 
 def _create_context():
     print("fd is %d", sys.argv[1])
+    fd = sys.argv[1]
     if len(sys.argv) == 3 and sys.argv[1] == "--uri":
         uri = sys.argv[2]
     else:
         contexts = iio.scan_contexts(fd)
-        if len(contexts) > 1:
+        if len(contexts) > 0:
             print("Multiple contexts found. Please select one using --uri:")
             for uri, description in contexts.items():
                 print("\t%s: %s" % (uri, description))

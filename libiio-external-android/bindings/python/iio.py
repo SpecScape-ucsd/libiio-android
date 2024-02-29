@@ -1481,9 +1481,13 @@ def scan_contexts(fd):
     """Scan Context."""
     scan_ctx = dict()
     ptr = _POINTER(_ContextInfoPtr)()
-    fd = 
-
-    ctx = _create_scan_context(usb, 0)
+    fd = int(fd)
+    fd = c_int(fd)
+    origin_type = "usb"
+    scan_type = origin_type.encode('utf-8')
+    c_scan_type = c_char_p(scan_type)
+    
+    ctx = _create_scan_context(c_scan_type, 0)
     ctx_nb = _get_context_info_list_android(ctx, _byref(ptr), _byref(fd))
 
     for i in range(0, ctx_nb):
