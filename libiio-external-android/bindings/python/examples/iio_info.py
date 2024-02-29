@@ -35,7 +35,7 @@ def _create_context():
                 print("\t%s: %s" % (uri, description))
         sys.exit(0)
 
-    return iio.Context(uri)
+    return iio.Context(fd, uri)
 
 
 class Information:

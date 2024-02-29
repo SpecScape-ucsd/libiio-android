@@ -40,7 +40,7 @@ class Arguments:
         self.timeout = int(args.timeout) if args.timeout else 0
         self.device_name = args.device[0]
         self.channels = args.channel
-
+ 
     def _add_parser_arguments(self):
         self.parser.add_argument(
             "-n",
@@ -90,7 +90,7 @@ class Arguments:
 class ContextBuilder:
     """Class for creating the requested context."""
 
-    def __init__(self, arguments):
+    def __init__(self, arguments, fd):
         """
         Class constructor.
 
@@ -100,6 +100,7 @@ class ContextBuilder:
         """
         self.ctx = None
         self.arguments = arguments
+        self.fd = fd
 
     def _timeout(self):
         if self.arguments.timeout >= 0:
@@ -107,7 +108,7 @@ class ContextBuilder:
         return self
 
     def _auto(self):
-        contexts = iio.scan_contexts()
+        contexts = iio.scan_contexts(self.fd)
         if len(contexts) == 0:
             raise Exception("No IIO context found.\n")
         if len(contexts) == 1:
@@ -122,7 +123,7 @@ class ContextBuilder:
         return self
 
     def _uri(self):
-        self.ctx = iio.Context(_context=self.arguments.arg_uri)
+        self.ctx = iio.Context(_context=self.arguments.arg_uri, self.fd)
         return self
 
     def _network(self):
@@ -130,7 +131,7 @@ class ContextBuilder:
         return self
 
     def _default(self):
-        self.ctx = iio.Context()
+        self.ctx = iio.Context(self.fd)
         return self
 
     def create(self):

@@ -293,6 +293,11 @@ _new_uri = _lib.iio_create_context_from_uri
 _new_uri.restype = _ContextPtr
 _new_uri.errcheck = _check_null
 
+_new_uri_android = _lib.iio_create_context_from_uri_android
+_new_uri_android.restype = _ContextPtr
+_new_uri_android.argtypes = (c_char_p, _POINTER(c_int))
+_new_uri_android.errcheck = _check_null
+
 _destroy = _lib.iio_context_destroy
 _destroy.argtypes = (_ContextPtr,)
 
@@ -1313,7 +1318,7 @@ class Device(_DeviceOrTrigger):
 class Context(object):
     """Contains the representation of an IIO context."""
 
-    def __init__(self, _context=None):
+    def __init__(self, fd="0", _context=None):
         """
         Initialize a new instance of the Context class, using the local or the network backend of the IIO library.
 
@@ -1330,7 +1335,9 @@ class Context(object):
         if _context is None:
             self._context = _new_default()
         elif _isstring(_context):
-            self._context = _new_uri(_context.encode("ascii"))
+            fd = int(fd)
+            fd = c_int(fd)
+            self._context = _new_uri_android(_context.encode("ascii"), fd)
         else:
             self._context = _context
 
@@ -1486,7 +1493,7 @@ def scan_contexts(fd):
     origin_type = "usb"
     scan_type = origin_type.encode('utf-8')
     c_scan_type = c_char_p(scan_type)
-    
+
     ctx = _create_scan_context(c_scan_type, 0)
     ctx_nb = _get_context_info_list_android(ctx, _byref(ptr), _byref(fd))
 
