@@ -134,9 +134,16 @@ void reconstruct_impl::start_subprocess(const std::string& sample_format,
     } else {
         throw std::runtime_error("Unsupported sample format");
     }
+    char dirname[100];
+    if (getcwd(dirname, sizeof(dirname)) != NULL) {
+        std::cerr << "Current working directory: " << dirname << std::endl;
+    } else {
+        perror("getcwd() error");
+        return;
+    }
 
     // Create a temporary directory for the pipes
-    std::string temp_dir("/sdcard/sparsdr_reconstruct_XXXXXX");
+    std::string temp_dir(dirname + "/sparsdr_reconstruct_XXXXXX");
     const auto mkdtemp_status = ::mkdtemp(&temp_dir.front());
     if (mkdtemp_status == nullptr) {
         std::cerr << "sparsdr::reconstruct failed to create temporary \
