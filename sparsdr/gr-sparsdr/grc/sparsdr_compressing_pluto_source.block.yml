@@ -80,7 +80,7 @@ asserts:
 templates:
     imports: import sparsdr
     make: |-
-        sparsdr.compressing_pluto_source(${uri}, ${buffer_size})
+        sparsdr.compressing_pluto_source(${uri}, ${buffer_size}, fd)
         self.${id}.set_frequency(${frequency})
         self.${id}.set_gain_control_mode(${gain_control_mode})
         % if eval(gain_control_mode) == "manual":
