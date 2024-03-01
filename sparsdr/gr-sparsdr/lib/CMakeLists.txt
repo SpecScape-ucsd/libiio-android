@@ -60,7 +60,7 @@ target_link_libraries(gnuradio-sparsdr
     gnuradio::gnuradio-runtime
     gnuradio::gnuradio-uhd
     gnuradio::gnuradio-blocks
-    UHD::uhd
+    UHD::UHD
     IIO::IIO
 )
 target_include_directories(gnuradio-sparsdr

@@ -86,7 +86,7 @@ ENDIF()
 # Install directories
 ########################################################################
 include(FindPkgConfig)
-find_package(Gnuradio "3.8" REQUIRED COMPONENTS uhd blocks)
+find_package(Gnuradio "3.9" REQUIRED COMPONENTS uhd blocks)
 include(GrVersion)
 
 include(GrPlatform) #define LIB_SUFFIX

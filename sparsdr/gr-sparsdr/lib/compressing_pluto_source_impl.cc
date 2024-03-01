@@ -93,7 +93,7 @@ compressing_pluto_source_impl::compressing_pluto_source_impl(const std::string& 
       d_format_version(0),
       d_fft_size(DEFAULT_FFT_SIZE)
 {
-    d_iio_context = iio_create_context_from_uri_android(uri.c_str(), fd);
+    d_iio_context = iio_create_context_from_uri_android(uri.c_str(), &fd);
     if (!d_iio_context) {
         throw std::runtime_error("Can't create IIO context");
     }
