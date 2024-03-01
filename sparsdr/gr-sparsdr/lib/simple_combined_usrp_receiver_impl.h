@@ -43,7 +43,7 @@ public:
                                        std::uint32_t threshold,
                                        const std::string& reconstruct_path,
                                        bool zero_gaps,
-                                       bool skip_bin_config);
+                                       bool skip_bin_config, const std::string& dirname);
 
     virtual void set_gain(double gain) override;
     virtual void set_antenna(const std::string& antenna) override;

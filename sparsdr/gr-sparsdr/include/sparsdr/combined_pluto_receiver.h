@@ -64,7 +64,7 @@ public:
                      float center_frequency,
                      const std::vector<band_spec>& bands,
                      const std::string& reconstruct_path = "sparsdr_reconstruct",
-                     bool zero_gaps = false, int fd = 0);
+                     bool zero_gaps = false, int fd = 0, const std::string& dirname = "/sdcard");
 
     // Compressing pluto source delegate functions
     virtual void set_frequency(unsigned long long frequency) = 0;

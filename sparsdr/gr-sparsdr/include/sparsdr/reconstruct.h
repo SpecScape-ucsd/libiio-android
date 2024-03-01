@@ -61,7 +61,7 @@ public:
                      const std::string& reconstruct_path = "sparsdr_reconstruct",
                      const std::string& sample_format = "N210 v1",
                      bool zero_gaps = false,
-                     unsigned int compression_fft_size = 1024);
+                     unsigned int compression_fft_size = 1024, const std::string& dirname = "/sdcard");
 };
 
 } // namespace sparsdr

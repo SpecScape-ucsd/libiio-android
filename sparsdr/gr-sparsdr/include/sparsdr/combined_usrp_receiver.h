@@ -65,7 +65,7 @@ public:
                      float center_frequency,
                      const std::vector<band_spec>& bands,
                      const std::string& reconstruct_path = "sparsdr_reconstruct",
-                     bool zero_gaps = false);
+                     bool zero_gaps = false,const std::string& dirname = "/sdcard");
 
     // Compressing USRP source delegated functions
     // For documentation, see compressing_usrp_source.h

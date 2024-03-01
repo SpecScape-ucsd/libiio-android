@@ -42,7 +42,7 @@ public:
                                  float center_frequency,
                                  const std::vector<band_spec>& bands,
                                  const std::string& reconstruct_path,
-                                 bool zero_gaps, int fd);
+                                 bool zero_gaps, int fd, const std::string& dirname);
     ~combined_pluto_receiver_impl();
 
     // Compressing pluto source delegate functions

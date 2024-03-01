@@ -54,10 +54,10 @@ reconstruct::sptr reconstruct::make(std::vector<band_spec> bands,
                                     const std::string& reconstruct_path,
                                     const std::string& sample_format,
                                     bool zero_gaps,
-                                    unsigned int compression_fft_size)
+                                    unsigned int compression_fft_size, const std::string& dirname)
 {
     return gnuradio::get_initial_sptr(new reconstruct_impl(
-        bands, reconstruct_path, sample_format, zero_gaps, compression_fft_size));
+        bands, reconstruct_path, sample_format, zero_gaps, compression_fft_size, dirname));
 }
 
 /*
@@ -67,7 +67,7 @@ reconstruct_impl::reconstruct_impl(const std::vector<band_spec>& bands,
                                    const std::string& reconstruct_path,
                                    const std::string& sample_format,
                                    bool zero_gaps,
-                                   unsigned int compression_fft_size)
+                                   unsigned int compression_fft_size, const std::string& dirname)
     : gr::hier_block2(
           "reconstruct",
           // One input for compressed samples
@@ -81,12 +81,12 @@ reconstruct_impl::reconstruct_impl(const std::vector<band_spec>& bands,
       d_temp_dir(),
       d_child(0)
 {
-    start_subprocess(sample_format, zero_gaps, compression_fft_size);
+    start_subprocess(sample_format, zero_gaps, compression_fft_size, dirname);
 }
 
 void reconstruct_impl::start_subprocess(const std::string& sample_format,
                                         bool zero_gaps,
-                                        unsigned int compression_fft_size)
+                                        unsigned int compression_fft_size, const std::string& dirname)
 {
     // Start assembling the command
     std::vector<std::string> arguments;
@@ -134,15 +134,11 @@ void reconstruct_impl::start_subprocess(const std::string& sample_format,
     } else {
         throw std::runtime_error("Unsupported sample format");
     }
-    char dirname[100];
-    if (getcwd(dirname, sizeof(dirname)) != NULL) {
-        std::cerr << "Current working directory: " << dirname << std::endl;
-    } else {
-        perror("getcwd() error");
-        return;
-    }
+    std::cerr << "Current working directory: " << dirname << std::endl;
 
     // Create a temporary directory for the pipes
+    char tmpfile[128];
+
     std::string temp_dir(dirname + "/sparsdr_reconstruct_XXXXXX");
     const auto mkdtemp_status = ::mkdtemp(&temp_dir.front());
     if (mkdtemp_status == nullptr) {

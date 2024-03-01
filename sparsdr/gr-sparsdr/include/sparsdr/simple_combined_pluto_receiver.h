@@ -69,7 +69,7 @@ public:
                      std::uint32_t threshold,
                      const std::string& reconstruct_path = "sparsdr_reconstruct",
                      bool zero_gaps = false,
-                     bool skip_bin_config = false, int fd = 0);
+                     bool skip_bin_config = false, int fd = 0, const std::string& dirname = "/sdcard");
 
     // Functions that delegate to combined_pluto_receiver functions
     virtual void set_gain(double gain) = 0;

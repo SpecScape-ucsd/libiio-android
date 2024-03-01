@@ -43,7 +43,7 @@ public:
                                         std::uint32_t threshold,
                                         const std::string& reconstruct_path,
                                         bool zero_gaps,
-                                        bool skip_bin_config, int fd);
+                                        bool skip_bin_config, int fd, const std::string& dirname);
 
     virtual void set_gain(double gain) override;
     virtual void set_gain_control_mode(const std::string& mode) override;

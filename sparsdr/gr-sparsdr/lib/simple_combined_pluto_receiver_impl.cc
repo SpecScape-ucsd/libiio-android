@@ -49,7 +49,7 @@ simple_combined_pluto_receiver::make(const std::string& uri,
                                      std::uint32_t threshold,
                                      const std::string& reconstruct_path,
                                      bool zero_gaps,
-                                     bool skip_bin_config, int fd)
+                                     bool skip_bin_config, int fd, const std::string& dirname)
 {
     return gnuradio::get_initial_sptr(
         new simple_combined_pluto_receiver_impl(uri,
@@ -59,7 +59,7 @@ simple_combined_pluto_receiver::make(const std::string& uri,
                                                 threshold,
                                                 reconstruct_path,
                                                 zero_gaps,
-                                                skip_bin_config, fd));
+                                                skip_bin_config, fd, dirname));
 }
 
 /*
@@ -73,7 +73,7 @@ simple_combined_pluto_receiver_impl::simple_combined_pluto_receiver_impl(
     std::uint32_t threshold,
     const std::string& reconstruct_path,
     bool zero_gaps,
-    bool skip_bin_config, int fd)
+    bool skip_bin_config, int fd, const std::string& dirname)
     : gr::hier_block2(
           "simple_combined_pluto_receiver",
           gr::io_signature::make(0, 0, 0),
@@ -90,7 +90,7 @@ simple_combined_pluto_receiver_impl::simple_combined_pluto_receiver_impl(
                                                      center_frequency,
                                                      setup.reconstruct_bands,
                                                      reconstruct_path,
-                                                     zero_gaps, fd);
+                                                     zero_gaps, fd, dirname);
     // This configuration doesn't need to be done from the Python code
     inner_block->set_frequency(static_cast<unsigned long long>(center_frequency));
     inner_block->stop_all();

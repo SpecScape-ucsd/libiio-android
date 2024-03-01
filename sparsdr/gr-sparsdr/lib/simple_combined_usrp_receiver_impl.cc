@@ -49,7 +49,7 @@ simple_combined_usrp_receiver::make(const ::uhd::device_addr_t& device_addr,
                                     std::uint32_t threshold,
                                     const std::string& reconstruct_path,
                                     bool zero_gaps,
-                                    bool skip_bin_config)
+                                    bool skip_bin_config, const std::string& dirname)
 {
     return gnuradio::get_initial_sptr(
         new simple_combined_usrp_receiver_impl(device_addr,
@@ -59,7 +59,7 @@ simple_combined_usrp_receiver::make(const ::uhd::device_addr_t& device_addr,
                                                threshold,
                                                reconstruct_path,
                                                zero_gaps,
-                                               skip_bin_config));
+                                               skip_bin_config, dirname));
 }
 
 /*
@@ -73,7 +73,7 @@ simple_combined_usrp_receiver_impl::simple_combined_usrp_receiver_impl(
     std::uint32_t threshold,
     const std::string& reconstruct_path,
     bool zero_gaps,
-    bool skip_bin_config)
+    bool skip_bin_config, const std::string& dirname)
     : gr::hier_block2(
           "simple_combined_usrp_receiver",
           gr::io_signature::make(0, 0, 0),
@@ -89,7 +89,7 @@ simple_combined_usrp_receiver_impl::simple_combined_usrp_receiver_impl(
                                                     center_frequency,
                                                     setup.reconstruct_bands,
                                                     reconstruct_path,
-                                                    zero_gaps);
+                                                    zero_gaps, dirname);
     // This configuration doesn't need to be done from the Python code
     inner_block->set_center_freq(center_frequency);
     inner_block->stop_all();

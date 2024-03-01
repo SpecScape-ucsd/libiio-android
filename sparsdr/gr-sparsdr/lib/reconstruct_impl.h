@@ -48,14 +48,14 @@ private:
 
     void start_subprocess(const std::string& sample_format,
                           bool zero_gaps,
-                          unsigned int compression_fft_size);
+                          unsigned int compression_fft_size, const std::string& dirname);
 
 public:
     reconstruct_impl(const std::vector<band_spec>& bands,
                      const std::string& reconstruct_path,
                      const std::string& sample_format,
                      bool zero_gaps,
-                     unsigned int compression_fft_size);
+                     unsigned int compression_fft_size, const std::string& dirname);
     ~reconstruct_impl();
 };
 

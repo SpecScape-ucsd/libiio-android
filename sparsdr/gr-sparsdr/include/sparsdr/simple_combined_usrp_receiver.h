@@ -73,7 +73,7 @@ public:
                      std::uint32_t threshold,
                      const std::string& reconstruct_path = "sparsdr_reconstruct",
                      bool zero_gaps = false,
-                     bool skip_bin_config = false);
+                     bool skip_bin_config = false, const std::string& dirname = "/sdcard");
 
     // Functions that delegate to combined_usrp_receiver functions
     virtual void set_gain(double gain) = 0;

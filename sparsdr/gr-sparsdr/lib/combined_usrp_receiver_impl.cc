@@ -44,14 +44,14 @@ combined_usrp_receiver::make(const ::uhd::device_addr_t& device_addr,
                              float center_frequency,
                              const std::vector<band_spec>& bands,
                              const std::string& reconstruct_path,
-                             bool zero_gaps)
+                             bool zero_gaps, const std::string& dirname)
 {
     return gnuradio::get_initial_sptr(new combined_usrp_receiver_impl(device_addr,
                                                                       format_version,
                                                                       center_frequency,
                                                                       bands,
                                                                       reconstruct_path,
-                                                                      zero_gaps));
+                                                                      zero_gaps, dirname));
 }
 
 /*
@@ -63,7 +63,7 @@ combined_usrp_receiver_impl::combined_usrp_receiver_impl(
     float center_frequency,
     const std::vector<band_spec>& bands,
     const std::string& reconstruct_path,
-    bool zero_gaps)
+    bool zero_gaps, const std::string& dirname)
     : gr::hier_block2(
           "combined_usrp_receiver",
           gr::io_signature::make(0, 0, 1),
@@ -92,10 +92,10 @@ combined_usrp_receiver_impl::combined_usrp_receiver_impl(
     // Create blocks
     d_usrp = compressing_usrp_source::make(device_addr);
     d_reconstruct = reconstruct::make(relative_bands,
-                                      "sparsdr_reconstruct",
+                                      reconstruct_path,
                                       format_version_string,
                                       zero_gaps,
-                                      /* compression FFT size */ 2048);
+                                      /* compression FFT size */ 2048, dirname);
     // Connect
     connect(d_usrp, 0, d_reconstruct, 0);
     for (std::size_t i = 0; i < bands.size(); i++) {

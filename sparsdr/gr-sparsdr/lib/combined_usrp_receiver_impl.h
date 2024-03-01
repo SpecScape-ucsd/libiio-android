@@ -41,7 +41,7 @@ public:
                                 float center_frequency,
                                 const std::vector<band_spec>& bands,
                                 const std::string& reconstruct_path,
-                                bool zero_gaps);
+                                bool zero_gaps, const std::string& dirname);
 
 
     // Compressing USRP source delegated functions
