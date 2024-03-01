@@ -136,7 +136,7 @@ void reconstruct_impl::start_subprocess(const std::string& sample_format,
     }
 
     // Create a temporary directory for the pipes
-    std::string temp_dir("sparsdr_reconstruct_XXXXXX");
+    std::string temp_dir("/sdcard/sparsdr_reconstruct_XXXXXX");
     const auto mkdtemp_status = ::mkdtemp(&temp_dir.front());
     if (mkdtemp_status == nullptr) {
         std::cerr << "sparsdr::reconstruct failed to create temporary \
