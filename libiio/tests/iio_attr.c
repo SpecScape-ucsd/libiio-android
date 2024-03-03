@@ -26,11 +26,11 @@
 #define snprintf sprintf_s
 #endif
 
-// enum verbosity {
-// 	ATTR_QUIET,
-// 	ATTR_NORMAL,
-// 	ATTR_VERBOSE,
-// };
+enum verbosity {
+	ATTR_QUIET,
+	ATTR_NORMAL,
+	ATTR_VERBOSE,
+};
 
 // static bool str_match(const char * haystack, char * needle, bool ignore)
 // {
