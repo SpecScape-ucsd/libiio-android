@@ -291,46 +291,46 @@ enum verbosity {
 // 	return (int)ret;
 // }
 
-// static const struct option options[] = {
-// 	{"ignore-case", no_argument, 0, 'I'},
-// 	{"quiet", no_argument, 0, 'q'},
-// 	{"verbose", no_argument, 0, 'v'},
-// 	{"generate-code", required_argument, 0, 'g'},
-// 	/* Channel qualifiers */
-// 	{"input-channel", no_argument, 0, 'i'},
-// 	{"output-channel", no_argument, 0, 'o'},
-// 	{"scan-channel", no_argument, 0, 's'},
-// 	/* Attribute type */
-// 	{"device-attr", no_argument, 0, 'd'},
-// 	{"channel-attr", no_argument, 0, 'c'},
-// 	{"context-attr", no_argument, 0, 'C'},
-// 	{"buffer-attr", no_argument, 0, 'B'},
-// 	{"debug-attr", no_argument, 0, 'D'},
-// 	{0, 0, 0, 0},
-// };
+static const struct option options[] = {
+	{"ignore-case", no_argument, 0, 'I'},
+	{"quiet", no_argument, 0, 'q'},
+	{"verbose", no_argument, 0, 'v'},
+	{"generate-code", required_argument, 0, 'g'},
+	/* Channel qualifiers */
+	{"input-channel", no_argument, 0, 'i'},
+	{"output-channel", no_argument, 0, 'o'},
+	{"scan-channel", no_argument, 0, 's'},
+	/* Attribute type */
+	{"device-attr", no_argument, 0, 'd'},
+	{"channel-attr", no_argument, 0, 'c'},
+	{"context-attr", no_argument, 0, 'C'},
+	{"buffer-attr", no_argument, 0, 'B'},
+	{"debug-attr", no_argument, 0, 'D'},
+	{0, 0, 0, 0},
+};
 
-// static const char *options_descriptions[] = {
-// 	("-d [device] [attr] [value]\n"
-// 		"\t\t\t\t-c [device] [channel] [attr] [value]\n"
-// 		"\t\t\t\t-B [device] [attr] [value]\n"
-// 		"\t\t\t\t-D [device] [attr] [value]\n"
-// 		"\t\t\t\t-C [attr]"),
-// 	/* help */
-// 	"Ignore case distinctions.",
-// 	"Return result only.",
-// 	"Verbose, say what is going on",
-// 	"Generate code.",
-// 	/* Channel qualifiers */
-// 	"Filter Input Channels only.",
-// 	"Filter Output Channels only.",
-// 	"Filter Scan Channels only.",
-// 	/* attribute type */
-// 	"Read/Write device attributes",
-// 	"Read/Write channel attributes.",
-// 	"Read IIO context attributes.",
-// 	"Read/Write buffer attributes.",
-// 	"Read/Write debug attributes.",
-// };
+static const char *options_descriptions[] = {
+	("-d [device] [attr] [value]\n"
+		"\t\t\t\t-c [device] [channel] [attr] [value]\n"
+		"\t\t\t\t-B [device] [attr] [value]\n"
+		"\t\t\t\t-D [device] [attr] [value]\n"
+		"\t\t\t\t-C [attr]"),
+	/* help */
+	"Ignore case distinctions.",
+	"Return result only.",
+	"Verbose, say what is going on",
+	"Generate code.",
+	/* Channel qualifiers */
+	"Filter Input Channels only.",
+	"Filter Output Channels only.",
+	"Filter Scan Channels only.",
+	/* attribute type */
+	"Read/Write device attributes",
+	"Read/Write channel attributes.",
+	"Read IIO context attributes.",
+	"Read/Write buffer attributes.",
+	"Read/Write debug attributes.",
+};
 
 void getusb_fd(int *fd, int argc, char **argv)
 {
@@ -368,6 +368,7 @@ int main(int argc, char **argv)
 	struct option *opts;
 
 	argc = argc - 1;
+	argd = argd - 1;
 	argw = dup_argv(MY_NAME, argc, argv);
 
 	/*
