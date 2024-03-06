@@ -306,12 +306,12 @@ void compressing_pluto_source_impl::write_u32_attr(const char* name, std::uint32
 void compressing_pluto_source_impl::configure_ad9361_phy()
 {
     const ssize_t sampling_frequency_status = iio_channel_attr_write_longlong(
-        d_ad9361_voltage0_out, "sampling_frequency", 61440000);
+        d_ad9361_voltage0_out, "sampling_frequency", 25600000);
     if (sampling_frequency_status < 0) {
         throw std::runtime_error("Failed to write voltage0 output sampling_frequency");
     }
     const ssize_t bandwidth_status =
-        iio_channel_attr_write_longlong(d_ad9361_voltage0_in, "rf_bandwidth", 56000000);
+        iio_channel_attr_write_longlong(d_ad9361_voltage0_in, "rf_bandwidth", 25000000);
     if (bandwidth_status < 0) {
         throw std::runtime_error("Failed to write rf_bandwidth");
     }

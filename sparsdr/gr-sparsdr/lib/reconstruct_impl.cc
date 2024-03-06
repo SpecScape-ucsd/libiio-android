@@ -119,14 +119,14 @@ void reconstruct_impl::start_subprocess(const std::string& sample_format,
         arguments.push_back("30");
     } else if (sample_format == "Pluto v1") {
         arguments.push_back("--compressed-bandwidth");
-        arguments.push_back("61.44e6");
+        arguments.push_back("25.6e6");
         arguments.push_back("--sample-format");
         arguments.push_back("v1-pluto");
         arguments.push_back("--timestamp-bits");
         arguments.push_back("21");
     } else if (sample_format == "Pluto v2") {
         arguments.push_back("--compressed-bandwidth");
-        arguments.push_back("61.44e6");
+        arguments.push_back("25.6e6");
         arguments.push_back("--sample-format");
         arguments.push_back("v2");
         arguments.push_back("--timestamp-bits");
@@ -134,7 +134,6 @@ void reconstruct_impl::start_subprocess(const std::string& sample_format,
     } else {
         throw std::runtime_error("Unsupported sample format");
     }
-    std::cerr << "Current working directory: " << dirname << std::endl;
 
     // Create a temporary directory for the pipes
     char tmpfile[128];
