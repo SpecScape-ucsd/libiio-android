@@ -39,7 +39,7 @@ if(NOT lora_sources)
 endif(NOT lora_sources)
 
 add_library(gnuradio-lora SHARED ${lora_sources})
-target_link_libraries(gnuradio-lora gnuradio::gnuradio-runtime gnuradio::gnuradio-blocks gnuradio::gnuradio-filter liquid log4cpp)
+target_link_libraries(gnuradio-lora gnuradio::gnuradio-runtime gnuradio::gnuradio-blocks gnuradio::gnuradio-filter liquid)
 target_include_directories(gnuradio-lora
     PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../include>
     PUBLIC $<BUILD_INTERFACE:${Boost_INCLUDE_DIR}>
