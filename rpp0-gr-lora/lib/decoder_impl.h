@@ -103,6 +103,8 @@ namespace gr {
                 float            d_snr;                     ///< Signal to noise ratio
                 boost::circular_buffer<float> d_pwr_queue;  ///< Queue holding symbol power values
 
+                uint64_t num_record_samples;
+                std::vector<gr_complex> d_samples;
                 std::vector<uint32_t> d_words;              ///< Vector containing the demodulated words.
                 std::vector<uint8_t>  d_demodulated;        ///< Vector containing the words after deinterleaving.
                 std::vector<uint8_t>  d_words_deshuffled;   ///< Vector containing the words after deshuffling.
@@ -164,8 +166,8 @@ namespace gr {
                  *  \param  elem_size
                  *          `sizeof` the data in the array.
                  */
-                void samples_to_file(const std::string path, const gr_complex *v, const uint32_t length, const uint32_t elem_size);
-
+                void samples_to_file(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size);
+                void samples_to_file2(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size);
                 /**
                   *  \brief  Debug method to dump the given values array to a file in textual format.
                   *
@@ -401,6 +403,7 @@ namespace gr {
                  */
                 inline void instantaneous_frequency(const gr_complex *in_samples, float *out_ifreq, const uint32_t window);
 
+                bool PrefixMatch(const std::vector<uint8_t>& vector, const std::vector<uint8_t>& prefix);
                 /**
                  *  \brief  TODO
                  */
