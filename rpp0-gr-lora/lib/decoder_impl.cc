@@ -250,10 +250,10 @@ namespace gr {
                     out_file << "Decode failed\n";
                 }
 
-                for (uint32_t i = 0u; i < d_decoded.size(); i++) {
-                    out_file << " " << std::hex << std::setw(2) << std::setfill('0') << (int)d_decoded[i];
-                }
-                out_file << "\n";
+                // for (uint32_t i = 0u; i < d_decoded.size(); i++) {
+                //     out_file << " " << std::hex << std::setw(2) << std::setfill('0') << (int)d_decoded[i];
+                // }
+                // out_file << "\n";
                 //for(std::vector<gr_complex>::const_iterator it = v.begin(); it != v.end(); ++it) {
                 for (uint32_t i = 0u; i < length; i++) {
                     out_file.write(reinterpret_cast<const char *>(&v[i]), elem_size);
@@ -828,8 +828,6 @@ namespace gr {
 
             switch (d_state) {
                 case gr::lora::DecoderState::DETECT: {
-                    num_record_samples = 0;
-                    d_samples.clear();
                     float correlation = detect_preamble_autocorr(input, d_samples_per_symbol);
 
                     if (correlation >= 0.90f) {
@@ -842,6 +840,12 @@ namespace gr {
                         break;
                     }
 
+                    if(num_record_samples > 0){
+                        samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), false);
+                    }
+
+                    num_record_samples = 0;
+                    d_samples.clear();
                     consume_each(d_samples_per_symbol);
 
                     break;
@@ -878,10 +882,6 @@ namespace gr {
                             d_debug << "SYNC: " << c << std::endl;
                         #endif
                         // Debug stuff
-                        for(int n = 0; n < (int32_t)d_samples_per_symbol+d_fine_sync; n++){
-                            d_samples.push_back(input[n]);
-                        }
-                        num_record_samples += (int32_t)d_samples_per_symbol+d_fine_sync;
 
                         samples_to_file("/tmp/sync", input, d_samples_per_symbol, sizeof(gr_complex));
 
@@ -901,6 +901,11 @@ namespace gr {
                             #endif
                         }
                     }
+
+                    for(int n = 0; n < (int32_t)d_samples_per_symbol+d_fine_sync; n++){
+                        d_samples.push_back(input[n]);
+                    }
+                    num_record_samples += (int32_t)d_samples_per_symbol+d_fine_sync;
 
                     consume_each((int32_t)d_samples_per_symbol+d_fine_sync);
                     break;
@@ -947,7 +952,7 @@ namespace gr {
                         }
                         d_state = gr::lora::DecoderState::DECODE_PAYLOAD;
                     }
-
+                    
                     for(int n = 0; n < (int32_t)d_samples_per_symbol+d_fine_sync; n++){
                         d_samples.push_back(input[n]);
                     }
@@ -967,6 +972,8 @@ namespace gr {
                             d_payload_symbols -= (4u + d_phdr.cr);
                     }
 
+                    std::string base_path = "/sdcard/samples";
+
                     if (d_payload_symbols <= 0) {
                         decode(false);
                         const std::vector<uint8_t> prefix1 = {0x7E, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
@@ -978,7 +985,7 @@ namespace gr {
                         num_record_samples += (int32_t)d_samples_per_symbol+d_fine_sync;
                         // Compare the extracted CRC with the calculated CRC
                         // Base file path
-                        std::string base_path = "/sdcard/samples";
+                        
 
                         if (PrefixMatch(d_decoded, prefix1) || PrefixMatch(d_decoded, prefix2) || PrefixMatch(d_decoded, prefix3)) {
                             samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), true);
@@ -994,6 +1001,22 @@ namespace gr {
                             msg_lora_frame();
                             std::cerr << " CRC check failed." << std::endl;
                         }
+
+                        d_state = gr::lora::DecoderState::DETECT;
+                        d_samples.clear();
+                        num_record_samples = 0;
+                        d_decoded.clear();
+                        d_words.clear();
+                        d_words_dewhitened.clear();
+                        d_words_deshuffled.clear();
+                        d_demodulated.clear();
+                    } else{
+                        for(int n = 0; n < (int32_t)d_samples_per_symbol*12; n++){
+                            d_samples.push_back(input[n]);
+                        }
+                        num_record_samples += (int32_t)d_samples_per_symbol+d_fine_sync;
+
+                        samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), false);
 
                         d_state = gr::lora::DecoderState::DETECT;
                         d_samples.clear();
