@@ -82,6 +82,7 @@ namespace gr {
                 std::vector<gr_complex> d_tmp;              ///< Vector containing the FFT decimation.
 
                 bool             d_implicit;                ///< Implicit header mode.
+                float            d_center_freq;
                 bool             d_reduced_rate;            ///< Use reduced rate (only configurable in implicit header mode).
                 uint8_t          d_sf;                      ///< The Spreading Factor.
                 uint32_t         d_bw;                      ///< The receiver bandwidth (fixed to `125kHz`).
@@ -418,7 +419,7 @@ namespace gr {
                  *  \param  sf
                  *          The expected spreqding factor.
                  */
-                decoder_impl(float samp_rate, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction);
+                decoder_impl(float samp_rate, float center_freq, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction);
 
                 /**
                  *  Default destructor.

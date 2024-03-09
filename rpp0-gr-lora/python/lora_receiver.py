@@ -50,7 +50,7 @@ class lora_receiver(gr.hier_block2):
         # Define blocks
         self.block_conj = gnuradio.blocks.conjugate_cc()
         self.channelizer = lora.channelizer(samp_rate, center_freq, channel_list, bandwidth, decimation)
-        self.decoder = lora.decoder(samp_rate / decimation, bandwidth, sf, implicit, cr, crc, reduced_rate, disable_drift_correction)
+        self.decoder = lora.decoder(samp_rate / decimation, center_freq, bandwidth, sf, implicit, cr, crc, reduced_rate, disable_drift_correction)
 
         # Messages
         self.message_port_register_hier_out('frames')

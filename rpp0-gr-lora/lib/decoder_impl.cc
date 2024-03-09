@@ -44,7 +44,7 @@
 namespace gr {
     namespace lora {
 
-        decoder::sptr decoder::make(float samp_rate, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction) {
+        decoder::sptr decoder::make(float samp_rate, float center_freq, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction) {
             return gnuradio::get_initial_sptr
                    (new decoder_impl(samp_rate, bandwidth, sf, implicit, cr, crc, reduced_rate, disable_drift_correction));
         }
@@ -52,7 +52,7 @@ namespace gr {
         /**
          * The private constructor
          */
-        decoder_impl::decoder_impl(float samp_rate, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction)
+        decoder_impl::decoder_impl(float samp_rate, float center_freq, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction)
             : gr::sync_block("decoder",
                              gr::io_signature::make(1, -1, sizeof(gr_complex)),
                              gr::io_signature::make(0, 0, 0)),
@@ -73,6 +73,7 @@ namespace gr {
             #endif
 
             d_bw                 = bandwidth;
+            d_center_freq        = center_freq;
             d_implicit           = implicit;
             d_reduced_rate       = reduced_rate;
             d_phdr.cr            = cr;
@@ -232,11 +233,13 @@ namespace gr {
                 std::string new_file_path = path + "_" + timestamp.str() + ".dat";
 
                 std::ofstream out_file;
-                out_file.open(path.c_str(), std::ios::out | std::ios::binary);
+                out_file.open(new_file_path.c_str(), std::ios::out | std::ios::binary);
 
-                std::string timestamp_input = "Timestamp:" + timestamp.str() + "\n"
+                std::string timestamp_input = "Timestamp:" + timestamp.str() + "\n";
+                out_file << timestamp_input;
 
-                out_file << timestamp_input
+                std::string center_freq_input = "Center_Freq: " + std::to_string(d_center_freq) + "\n";
+                out_file << center_freq_input;
 
                 std::string SNR_input = "SNR:" + std::to_string(d_snr) + "\n";
                 out_file << SNR_input;
@@ -961,8 +964,8 @@ namespace gr {
 
                     if (d_payload_symbols <= 0) {
                         decode(false);
-                        const std::vector<uint8_t> prefix1 = {0x48, 0x69};
-                        const std::vector<uint8_t> prefix2 = {0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64};
+                        const std::vector<uint8_t> prefix3 = {0x7E, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+                        const std::vector<uint8_t> prefix3 = {0x7F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
                         const std::vector<uint8_t> prefix3 = {0x79, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
                         for(int n = 0; n < (int32_t)d_samples_per_symbol+d_fine_sync; n++){
                             d_samples.push_back(input[n]);
@@ -973,7 +976,7 @@ namespace gr {
                         std::string base_path = "/sdcard/samples";
 
                         if (PrefixMatch(d_decoded, prefix1) || PrefixMatch(d_decoded, prefix2) || PrefixMatch(d_decoded, prefix3)) {
-                            samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), false);
+                            samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), true);
                             // CRC check passed, proceed with further processing
                             gr::lora::print_vector_hex(std::cerr, &d_decoded[0], d_payload_length, true, true);
                             msg_lora_frame();
