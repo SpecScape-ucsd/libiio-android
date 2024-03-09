@@ -167,7 +167,7 @@ namespace gr {
                  *          `sizeof` the data in the array.
                  */
                 void samples_to_file(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size);
-                void samples_to_file2(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size);
+                void samples_to_file2(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size, bool decode_res);
                 /**
                   *  \brief  Debug method to dump the given values array to a file in textual format.
                   *

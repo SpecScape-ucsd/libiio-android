@@ -214,12 +214,38 @@ namespace gr {
             #endif
         }
 
-        void decoder_impl::samples_to_file2(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size) {
+        void decoder_impl::samples_to_file2(const std::string path, const gr_complex *v, const uint64_t length, const uint32_t elem_size, bool decode_res) {
             #ifdef sample2file
+
+                // Get the current time in UTC
+                auto now = std::chrono::system_clock::now();
+                auto now_c = std::chrono::system_clock::to_time_t(now);
+
+                // Convert time to UTC format
+                std::tm* now_tm = std::gmtime(&now_c);
+
+                // Format the time as a string (e.g., '20230307_150305')
+                std::ostringstream timestamp;
+                timestamp << std::put_time(now_tm, "%Y%m%d_%H%M%S");
+
+                // Append the timestamp and file extension to the base path
+                std::string new_file_path = path + "_" + timestamp.str() + ".dat";
+
                 std::ofstream out_file;
                 out_file.open(path.c_str(), std::ios::out | std::ios::binary);
+
+                std::string timestamp_input = "Timestamp:" + timestamp.str() + "\n"
+
+                out_file << timestamp_input
+
                 std::string SNR_input = "SNR:" + std::to_string(d_snr) + "\n";
                 out_file << SNR_input;
+
+                if(decode_res){
+                    out_file << "Decode succeed\n";
+                } else{
+                    out_file << "Decode failed\n";
+                }
                 //for(std::vector<gr_complex>::const_iterator it = v.begin(); it != v.end(); ++it) {
                 for (uint32_t i = 0u; i < length; i++) {
                     out_file.write(reinterpret_cast<const char *>(&v[i]), elem_size);
@@ -937,35 +963,24 @@ namespace gr {
                         decode(false);
                         const std::vector<uint8_t> prefix1 = {0x48, 0x69};
                         const std::vector<uint8_t> prefix2 = {0x53, 0x65, 0x63, 0x6f, 0x6e, 0x64};
+                        const std::vector<uint8_t> prefix3 = {0x79, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
                         for(int n = 0; n < (int32_t)d_samples_per_symbol+d_fine_sync; n++){
                             d_samples.push_back(input[n]);
                         }
                         num_record_samples += (int32_t)d_samples_per_symbol+d_fine_sync;
                         // Compare the extracted CRC with the calculated CRC
-                        if (PrefixMatch(d_decoded, prefix1) || PrefixMatch(d_decoded, prefix2)) {
+                        // Base file path
+                        std::string base_path = "/sdcard/samples";
+
+                        if (PrefixMatch(d_decoded, prefix1) || PrefixMatch(d_decoded, prefix2) || PrefixMatch(d_decoded, prefix3)) {
+                            samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), false);
                             // CRC check passed, proceed with further processing
                             gr::lora::print_vector_hex(std::cerr, &d_decoded[0], d_payload_length, true, true);
                             msg_lora_frame();
                             std::cerr << "CRC check passed." << std::endl;
                         } else {
-                            // Base file path
-                            std::string base_path = "/sdcard/failed_samples";
-
-                            // Get the current time in UTC
-                            auto now = std::chrono::system_clock::now();
-                            auto now_c = std::chrono::system_clock::to_time_t(now);
-
-                            // Convert time to UTC format
-                            std::tm* now_tm = std::gmtime(&now_c);
-
-                            // Format the time as a string (e.g., '20230307_150305')
-                            std::ostringstream timestamp;
-                            timestamp << std::put_time(now_tm, "%Y%m%d_%H%M%S");
-
-                            // Append the timestamp and file extension to the base path
-                            std::string new_file_path = base_path + "_" + timestamp.str() + ".dat";
-
-                            samples_to_file2(new_file_path, &d_samples[0], num_record_samples, sizeof(gr_complex));
+                            
+                            samples_to_file2(base_path, &d_samples[0], num_record_samples, sizeof(gr_complex), false);
                             // Handle CRC check failure (e.g., discard the message, log an error, etc.)
                             gr::lora::print_vector_hex(std::cerr, &d_decoded[0], d_payload_length, true, true);
                             msg_lora_frame();
