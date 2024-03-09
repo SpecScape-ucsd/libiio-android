@@ -46,7 +46,7 @@ namespace gr {
 
         decoder::sptr decoder::make(float samp_rate, float center_freq, uint32_t bandwidth, uint8_t sf, bool implicit, uint8_t cr, bool crc, bool reduced_rate, bool disable_drift_correction) {
             return gnuradio::get_initial_sptr
-                   (new decoder_impl(samp_rate, bandwidth, sf, implicit, cr, crc, reduced_rate, disable_drift_correction));
+                   (new decoder_impl(samp_rate, center_freq, bandwidth, sf, implicit, cr, crc, reduced_rate, disable_drift_correction));
         }
 
         /**
@@ -249,6 +249,11 @@ namespace gr {
                 } else{
                     out_file << "Decode failed\n";
                 }
+
+                for (uint32_t i = 0u; i < d_decoded.size(); i++) {
+                    out_file << " " << std::hex << std::setw(2) << std::setfill('0') << (int)d_decoded[i];
+                }
+                out_file << "\n";
                 //for(std::vector<gr_complex>::const_iterator it = v.begin(); it != v.end(); ++it) {
                 for (uint32_t i = 0u; i < length; i++) {
                     out_file.write(reinterpret_cast<const char *>(&v[i]), elem_size);
@@ -964,8 +969,8 @@ namespace gr {
 
                     if (d_payload_symbols <= 0) {
                         decode(false);
-                        const std::vector<uint8_t> prefix3 = {0x7E, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
-                        const std::vector<uint8_t> prefix3 = {0x7F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+                        const std::vector<uint8_t> prefix1 = {0x7E, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+                        const std::vector<uint8_t> prefix2 = {0x7F, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
                         const std::vector<uint8_t> prefix3 = {0x79, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
                         for(int n = 0; n < (int32_t)d_samples_per_symbol+d_fine_sync; n++){
                             d_samples.push_back(input[n]);
